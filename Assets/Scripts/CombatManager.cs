@@ -9,15 +9,19 @@ public class CombatManager : MonoBehaviour
 
     public GameObject playerTurn;
     public GameObject enemyTurn;
+    public GameObject startingTurn;
+    public GameObject victoryTurn;
 
     protected CombatBaseState curState;
     public CombatEnemyState enemyAttack = new CombatEnemyState();
     public CombatPlayerState playerAttack = new CombatPlayerState();
+    public CombatStartState startingState = new CombatStartState();
+    public CombatVictoryState victoryState = new CombatVictoryState();
 
     // Start is called before the first frame update
     void Start()
     {
-        ChangeState(playerAttack);
+        ChangeState(startingState);
     }
 
     // Update is called once per frame

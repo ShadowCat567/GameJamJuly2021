@@ -2,28 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CombatPlayerState : CombatBaseState
+public class CombatVictoryState : CombatBaseState
 {
     public override void EnterState(GameObject enemy, Player player, CombatManager cm)
     {
-        cm.playerTurn.SetActive(true);
+        cm.victoryTurn.SetActive(true);
     }
 
     public override void UpdateState(GameObject enemy, Player player, CombatManager cm)
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            cm.ChangeState(cm.enemyAttack);
-        }
 
-        if(Input.GetKeyDown(KeyCode.Return))
-        {
-            cm.ChangeState(cm.victoryState);
-        }
     }
 
     public override void ExitState(GameObject enemy, Player player, CombatManager cm)
     {
-        cm.playerTurn.SetActive(false);
+        cm.victoryTurn.SetActive(false);
     }
 }
