@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -10,9 +11,9 @@ public class Player : MonoBehaviour
 
     Rigidbody2D rb;
 
-    int maxHealth;
-    int attackStat;
-    int defenseStat;
+    public int maxHealth;
+    public int attackStat;
+    public int defenseStat;
 
     private void Awake()
     {
