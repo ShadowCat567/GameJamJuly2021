@@ -24,5 +24,6 @@ public class CombatVictoryState : CombatBaseState
     public override void ExitState(EnemyBehavior enemy, Player player, CombatManager cm)
     {
         cm.victoryTurn.SetActive(false);
+        cm.EnemyHealth.SetActive(false);
     }
 }

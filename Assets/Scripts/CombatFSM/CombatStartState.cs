@@ -30,5 +30,6 @@ public class CombatStartState : CombatBaseState
     public override void ExitState(EnemyBehavior enemy, Player player, CombatManager cm)
     {
         cm.startingTurn.SetActive(false);
+        cm.EnemyHealth.SetActive(true);
     }
 }

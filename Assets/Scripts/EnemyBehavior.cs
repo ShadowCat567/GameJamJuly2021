@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 public class EnemyBehavior : MonoBehaviour
 {
     [SerializeField] GameObject CombatManage;
     [SerializeField] GameObject Enemy;
+    [SerializeField] Slider HealthBar;
 
     public int enemyDamageMod;
 
@@ -29,11 +31,15 @@ public class EnemyBehavior : MonoBehaviour
         enemyDamageMod = rand.Next(1, 3);
         listRefilled = true;
         RefillLst();
+        HealthBar.maxValue = maxEnemyHealth;
+        HealthBar.value = curEnemyHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
+        HealthBar.value = curEnemyHealth;
+
         if(curEnemyHealth <= 0)
         {
             Enemy.SetActive(false);

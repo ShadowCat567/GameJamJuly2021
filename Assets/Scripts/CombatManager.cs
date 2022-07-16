@@ -21,6 +21,8 @@ public class CombatManager : MonoBehaviour
 
     public GameObject combatPanel;
 
+    public GameObject EnemyHealth;
+
     public bool blocking;
     public int enemyDmgDealt;
 
@@ -33,6 +35,7 @@ public class CombatManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        EnemyHealth.SetActive(false);
         ChangeState(startingState);
     }
 

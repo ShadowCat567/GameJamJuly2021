@@ -25,12 +25,16 @@ public class Player : MonoBehaviour
 
     System.Random rand = new System.Random();
 
+    [SerializeField] Slider healthSlider;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         curHealth = maxHealth;
         attackStat = rand.Next(2, 5);
         defenseStat = rand.Next(3, 6);
+        healthSlider.maxValue = maxHealth;
+        healthSlider.value = curHealth;
     }
 
     // Start is called before the first frame update
@@ -44,7 +48,9 @@ public class Player : MonoBehaviour
     {
         PlayerMovement();
 
-        if(Input.GetKeyDown(KeyCode.Escape))
+        healthSlider.value = curHealth;
+
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             Time.timeScale = 0;
             pausePanel.SetActive(true);
