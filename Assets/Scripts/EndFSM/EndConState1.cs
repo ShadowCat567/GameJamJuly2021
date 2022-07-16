@@ -6,7 +6,8 @@ public class EndConState1 : EndConvoBaseState
 {
     public override void EnterState(EndConvoManager ecm)
     {
-
+        ecm.endConvo1.SetActive(true);
+        ecm.endTxt1.text = "Azalea! \nPress SPACE to continue";
     }
 
     public override void UpdateState(EndConvoManager ecm)
@@ -19,6 +20,6 @@ public class EndConState1 : EndConvoBaseState
 
     public override void ExitState(EndConvoManager ecm)
     {
-
+        ecm.endConvo1.SetActive(false);
     }
 }

@@ -7,7 +7,8 @@ public class EndConState4 : EndConvoBaseState
 {
     public override void EnterState(EndConvoManager ecm)
     {
-
+        ecm.endConvo4.SetActive(true);
+        ecm.endTxt4.text = "I'm fine, let's go home \nPress SPACE to continue";
     }
 
     public override void UpdateState(EndConvoManager ecm)
@@ -20,6 +21,6 @@ public class EndConState4 : EndConvoBaseState
 
     public override void ExitState(EndConvoManager ecm)
     {
-
+        ecm.endConvo4.SetActive(false);
     }
 }

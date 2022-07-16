@@ -1,9 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class EndConvoManager : MonoBehaviour
 {
+    public GameObject player;
+    public GameObject endPanel;
+
+    public GameObject endConvo1;
+    public GameObject endConvo2;
+    public GameObject endConvo3;
+    public GameObject endConvo4;
+
+    public TMP_Text endTxt1;
+    public TMP_Text endTxt2;
+    public TMP_Text endTxt3;
+    public TMP_Text endTxt4;
+
     protected EndConvoBaseState curState;
     public EndConState1 endState1 = new EndConState1();
     public EndConState2 endState2 = new EndConState2();

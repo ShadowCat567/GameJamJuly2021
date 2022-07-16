@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Friend : MonoBehaviour
 {
+    [SerializeField] GameObject EndManager;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        EndManager.SetActive(false);
     }
 
     // Update is called once per frame
@@ -21,7 +23,8 @@ public class Friend : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene(2);
+            EndManager.SetActive(true);
+            EndManager.GetComponent<EndConvoManager>().endPanel.SetActive(true);
         }
     }
 }

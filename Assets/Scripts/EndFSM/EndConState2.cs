@@ -6,7 +6,8 @@ public class EndConState2 : EndConvoBaseState
 {
     public override void EnterState(EndConvoManager ecm)
     {
-
+        ecm.endConvo2.SetActive(true);
+        ecm.endTxt2.text = "Ladybug! You made it! \nPress SPACE to continue";
     }
 
     public override void UpdateState(EndConvoManager ecm)
@@ -19,6 +20,6 @@ public class EndConState2 : EndConvoBaseState
 
     public override void ExitState(EndConvoManager ecm)
     {
-
+        ecm.endConvo2.SetActive(false);
     }
 }
