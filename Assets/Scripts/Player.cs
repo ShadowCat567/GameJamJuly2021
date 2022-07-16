@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -47,6 +48,11 @@ public class Player : MonoBehaviour
         {
             Time.timeScale = 0;
             pausePanel.SetActive(true);
+        }
+
+        if(curHealth <= 0)
+        {
+            SceneManager.LoadScene(3);
         }
     }
 
