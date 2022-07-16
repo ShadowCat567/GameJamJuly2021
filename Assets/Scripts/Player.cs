@@ -6,13 +6,13 @@ using System;
 
 public class Player : MonoBehaviour
 {
-    float moveSpeed = 5.0f;
+    float moveSpeed = 4.0f;
     float moveX;
     float moveY;
 
     Rigidbody2D rb;
 
-    int maxHealth = 15;
+    int maxHealth = 25;
     public int curHealth;
     public int attackStat;
     public int defenseStat;

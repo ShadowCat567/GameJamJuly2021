@@ -13,41 +13,42 @@ public class CombatEnemyState : CombatBaseState
 
     public override void UpdateState(EnemyBehavior enemy, Player player, CombatManager cm)
     {
-        string displayTxt;
-        int dmg = enemy.enemyDamageMod + enemy.GenerateAttackValue();
+        //string displayTxt;
+        //int dmg = enemy.enemyDamageMod + enemy.GenerateAttackValue();
 
         if(cm.blocking)
         {
-            if(player.defenseStat < dmg)
+            int damageTaken = enemy.enemyDamageMod - player.defenseStat;
+            if (damageTaken > 0)
             {
-                int damageTaken = player.defenseStat - dmg;
                 player.TakeDamage(damageTaken);
-                displayTxt = damageTaken + " damage has been dealt to you. \nPress 'B' to block or 'V' to attack";
+                cm.enemyTurnTxt.text = damageTaken + " damage has been dealt to you. \nPress 'B' to block or 'V' to attack";
             }
 
-            else
+            else if (damageTaken <= 0)
             {
-                displayTxt = "You sucessfully blocked the enemy's attack! \nPress 'B' to block or 'V' to attack";
+                cm.enemyTurnTxt.text = "You sucessfully blocked the enemy's attack! \nPress 'B' to block or 'V' to attack";
             }
         }
 
         else
         {
-            player.TakeDamage(dmg);
-            displayTxt = dmg + " damage has been dealt to you. \nPress 'B' to block or 'V' to attack";
+            player.TakeDamage(enemy.enemyDamageMod + enemy.GenerateAttackValue());
+            cm.enemyTurnTxt.text = enemy.enemyDamageMod + enemy.GenerateAttackValue() + " damage has been dealt to you. \nPress 'B' to block or 'V' to attack";
         }
 
-        cm.enemyTurnTxt.text = displayTxt;
-        cm.blocking = false;
+       // cm.enemyTurnTxt.text = displayTxt;
 
         if (Input.GetKeyDown(KeyCode.B))
         {
+            cm.blocking = false;
             cm.ChangeState(cm.playerAttack);
             cm.blocking = true;
         }
         
         if(Input.GetKeyDown(KeyCode.V))
         {
+            cm.blocking = false;
             cm.ChangeState(cm.playerAttack);
         }
     }
