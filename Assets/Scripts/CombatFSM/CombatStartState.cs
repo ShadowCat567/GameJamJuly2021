@@ -17,8 +17,8 @@ public class CombatStartState : CombatBaseState
 
         if (Input.GetKeyDown(KeyCode.B))
         {
-            cm.ChangeState(cm.playerAttack);
             cm.blocking = true;
+            cm.ChangeState(cm.playerAttack);
         }
 
         if (Input.GetKeyDown(KeyCode.V))

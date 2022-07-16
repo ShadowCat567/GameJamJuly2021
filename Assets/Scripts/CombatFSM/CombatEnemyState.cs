@@ -7,18 +7,10 @@ public class CombatEnemyState : CombatBaseState
     public override void EnterState(EnemyBehavior enemy, Player player, CombatManager cm)
     {
         cm.enemyTurn.SetActive(true);
-        enemy.genAttkVal = true;
-        player.takenDamage = true;
-    }
 
-    public override void UpdateState(EnemyBehavior enemy, Player player, CombatManager cm)
-    {
-        //string displayTxt;
-        //int dmg = enemy.enemyDamageMod + enemy.GenerateAttackValue();
-
-        if(cm.blocking)
+        if (cm.blocking)
         {
-            int damageTaken = enemy.enemyDamageMod - player.defenseStat;
+            int damageTaken = (enemy.enemyDamageMod + enemy.GenerateAttackValue()) - player.defenseStat;
             if (damageTaken > 0)
             {
                 player.TakeDamage(damageTaken);
@@ -36,14 +28,17 @@ public class CombatEnemyState : CombatBaseState
             player.TakeDamage(enemy.enemyDamageMod + enemy.GenerateAttackValue());
             cm.enemyTurnTxt.text = enemy.enemyDamageMod + enemy.GenerateAttackValue() + " damage has been dealt to you. \nPress 'B' to block or 'V' to attack";
         }
+    }
 
-       // cm.enemyTurnTxt.text = displayTxt;
+    public override void UpdateState(EnemyBehavior enemy, Player player, CombatManager cm)
+    {
+        //string displayTxt;
+        //int dmg = enemy.enemyDamageMod + enemy.GenerateAttackValue();
 
         if (Input.GetKeyDown(KeyCode.B))
         {
-            cm.blocking = false;
-            cm.ChangeState(cm.playerAttack);
             cm.blocking = true;
+            cm.ChangeState(cm.playerAttack);
         }
         
         if(Input.GetKeyDown(KeyCode.V))

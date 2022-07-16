@@ -16,7 +16,6 @@ public class EnemyBehavior : MonoBehaviour
     public int curEnemyHealth;
 
     public bool dmgTaken = false;
-    public bool genAttkVal = false;
     bool listRefilled = false;
 
     List<int> attkValLst = new List<int>();
@@ -48,36 +47,22 @@ public class EnemyBehavior : MonoBehaviour
 
     public void TakeDamage(int damageTaken)
     {
-        if (dmgTaken)
-        {
-            curEnemyHealth -= damageTaken;
-            dmgTaken = false;
-        }
+        curEnemyHealth -= damageTaken;
     }
 
     public int GenerateAttackValue()
     {
-        if (genAttkVal)
+        int attkValPos = rand.Next(0, attkValLst.Count);
+        int attkVal = attkValLst[attkValPos];
+        attkValLst.Remove(attkVal);
+
+        if(attkValLst.Count == 0)
         {
-            int attkValPos = rand.Next(0, attkValLst.Count);
-            int attkVal = attkValLst[attkValPos];
-            Debug.Log(attkVal);
-            attkValLst.Remove(attkVal);
-            genAttkVal = false;
-
-            if(attkValLst.Count == 0)
-            {
-                listRefilled = true;
-                RefillLst();
-            }
-
-            return attkVal;
+            listRefilled = true;
+            RefillLst();
         }
 
-        else
-        {
-            return 2;
-        }
+        return attkVal;
     }
 
     void RefillLst()

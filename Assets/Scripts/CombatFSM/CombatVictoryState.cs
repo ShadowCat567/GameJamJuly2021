@@ -17,6 +17,7 @@ public class CombatVictoryState : CombatBaseState
 
         if(Input.GetKeyDown(KeyCode.Space))
         {
+            cm.EnemyHealth.SetActive(false);
             cm.combatPanel.SetActive(false);
         }
     }
@@ -24,6 +25,5 @@ public class CombatVictoryState : CombatBaseState
     public override void ExitState(EnemyBehavior enemy, Player player, CombatManager cm)
     {
         cm.victoryTurn.SetActive(false);
-        cm.EnemyHealth.SetActive(false);
     }
 }

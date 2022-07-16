@@ -18,9 +18,6 @@ public class Player : MonoBehaviour
     public int attackStat;
     public int defenseStat;
 
-    public bool generateAttackVal = false;
-    public bool takenDamage = false;
-
     [SerializeField] GameObject pausePanel;
 
     System.Random rand = new System.Random();
@@ -75,24 +72,12 @@ public class Player : MonoBehaviour
 
     public int GenerateAttackValue()
     {
-        if (generateAttackVal)
-        {
-            int attkVal = rand.Next(1, 7);
-            generateAttackVal = false;
-            return attkVal;
-        }
-        else
-        {
-            return 3;
-        }
+        int attkVal = rand.Next(1, 7);
+        return attkVal;
     }
 
     public void TakeDamage(int damageTaken)
     {
-        if (takenDamage)
-        {
-            curHealth -= damageTaken;
-            takenDamage = false;
-        }
+        curHealth -= damageTaken;
     }
 }
