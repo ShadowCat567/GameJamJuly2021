@@ -1,16 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class CombatManager : MonoBehaviour
 {
-    [SerializeField] GameObject enemy;
-    [SerializeField] GameObject player;
+    [SerializeField] private GameObject enemy;
+    [SerializeField] private GameObject player;
 
     public GameObject playerTurn;
     public GameObject enemyTurn;
     public GameObject startingTurn;
     public GameObject victoryTurn;
+
+    public TMP_Text playerTurnTxt;
+    public TMP_Text enemyTurnTxt;
+    public TMP_Text victoryTxt;
+    public TMP_Text startingTxt;
+
+    public GameObject combatPanel;
+
+    public bool blocking;
+    public int enemyDmgDealt;
 
     protected CombatBaseState curState;
     public CombatEnemyState enemyAttack = new CombatEnemyState();
@@ -27,21 +39,21 @@ public class CombatManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        curState.UpdateState(enemy, player.GetComponent<Player>(), this);
+        curState.UpdateState(enemy.GetComponent<EnemyBehavior>(), player.GetComponent<Player>(), this);
     }
 
     public void ChangeState(CombatBaseState newState)
     {
         if(curState != null)
         {
-            curState.ExitState(enemy, player.GetComponent<Player>(), this);
+            curState.ExitState(enemy.GetComponent<EnemyBehavior>(), player.GetComponent<Player>(), this);
         }
 
         curState = newState;
 
         if(curState != null)
         {
-            curState.EnterState(enemy, player.GetComponent<Player>(), this);
+            curState.EnterState(enemy.GetComponent<EnemyBehavior>(), player.GetComponent<Player>(), this);
         }
     }
 }

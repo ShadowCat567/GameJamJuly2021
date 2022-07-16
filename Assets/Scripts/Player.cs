@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class Player : MonoBehaviour
 {
@@ -11,13 +12,24 @@ public class Player : MonoBehaviour
 
     Rigidbody2D rb;
 
-    public int maxHealth;
+    int maxHealth = 15;
+    public int curHealth;
     public int attackStat;
     public int defenseStat;
+
+    public bool generateAttackVal = false;
+    public bool takenDamage = false;
+
+    [SerializeField] GameObject pausePanel;
+
+    System.Random rand = new System.Random();
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        curHealth = maxHealth;
+        attackStat = rand.Next(2, 5);
+        defenseStat = rand.Next(3, 6);
     }
 
     // Start is called before the first frame update
@@ -30,6 +42,12 @@ public class Player : MonoBehaviour
     void Update()
     {
         PlayerMovement();
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Time.timeScale = 0;
+            pausePanel.SetActive(true);
+        }
     }
 
     private void FixedUpdate()
@@ -41,5 +59,28 @@ public class Player : MonoBehaviour
     {
         moveX = Input.GetAxis("Horizontal");
         moveY = Input.GetAxis("Vertical");
+    }
+
+    public int GenerateAttackValue()
+    {
+        if (generateAttackVal)
+        {
+            int attkVal = rand.Next(1, 7);
+            generateAttackVal = false;
+            return attkVal;
+        }
+        else
+        {
+            return 3;
+        }
+    }
+
+    public void TakeDamage(int damageTaken)
+    {
+        if (takenDamage)
+        {
+            curHealth -= damageTaken;
+            takenDamage = false;
+        }
     }
 }
