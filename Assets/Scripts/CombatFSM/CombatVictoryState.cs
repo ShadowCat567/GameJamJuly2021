@@ -7,14 +7,12 @@ public class CombatVictoryState : CombatBaseState
     public override void EnterState(EnemyBehavior enemy, Player player, CombatManager cm)
     {
         cm.victoryTurn.SetActive(true);
+
+        cm.victoryTxt.text = "You successfully defeated the Weevil! \nPress SPACE to continue";
     }
 
     public override void UpdateState(EnemyBehavior enemy, Player player, CombatManager cm)
     {
-        string displayText = "You successfully defeated the enemy! \nPress SPACE to continue";
-
-        cm.victoryTxt.text = displayText;
-
         if(Input.GetKeyDown(KeyCode.Space))
         {
             cm.EnemyHealth.SetActive(false);

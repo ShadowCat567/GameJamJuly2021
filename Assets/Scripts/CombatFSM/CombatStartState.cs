@@ -7,14 +7,12 @@ public class CombatStartState : CombatBaseState
     public override void EnterState(EnemyBehavior enemy, Player player, CombatManager cm)
     {
         cm.startingTurn.SetActive(true);
+
+        cm.startingTxt.text = "Press 'B' to block or 'V' to attack";
     }
 
     public override void UpdateState(EnemyBehavior enemy, Player player, CombatManager cm)
     {
-        string displayText = "Press 'B' to block or 'V' to attack";
-
-        cm.startingTxt.text = displayText;
-
         if (Input.GetKeyDown(KeyCode.B))
         {
             cm.blocking = true;

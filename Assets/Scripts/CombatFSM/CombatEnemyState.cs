@@ -19,7 +19,7 @@ public class CombatEnemyState : CombatBaseState
 
             else if (damageTaken <= 0)
             {
-                cm.enemyTurnTxt.text = "You sucessfully blocked the enemy's attack! \nPress 'B' to block or 'V' to attack";
+                cm.enemyTurnTxt.text = "You sucessfully blocked the Weevil's attack! \nPress 'B' to block or 'V' to attack";
             }
         }
 
