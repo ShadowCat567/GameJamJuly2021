@@ -7,7 +7,6 @@ public class CombatStartState : CombatBaseState
     public override void EnterState(EnemyBehavior enemy, Player player, CombatManager cm)
     {
         cm.startingTurn.SetActive(true);
-
         cm.startingTxt.text = "Try me! You won't make it to your friend! \n ['V'] to attack or ['B'] to block";
     }
 
@@ -15,15 +14,15 @@ public class CombatStartState : CombatBaseState
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
-            cm.player.SetActive(false);
             cm.soundSource.PlayOneShot(cm.next);
+            cm.player.GetComponent<Player>().bc.enabled = false;
             cm.blocking = true;
             cm.ChangeState(cm.playerAttack);
         }
 
         if (Input.GetKeyDown(KeyCode.V))
         {
-            cm.player.SetActive(false);
+            cm.player.GetComponent<Player>().bc.enabled = false;
             cm.soundSource.PlayOneShot(cm.next);
             cm.ChangeState(cm.playerAttack);
         }

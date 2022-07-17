@@ -15,6 +15,7 @@ public class EndFightState : FightBaseState
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
+            bfm.player.GetComponent<Player>().bc.enabled = true;
             bfm.soundSource.PlayOneShot(bfm.next);
             bfm.BossHealth.SetActive(false);
             bfm.fightPanel.SetActive(false);

@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     float moveY;
 
     Rigidbody2D rb;
+    public BoxCollider2D bc;
 
     int maxHealth = 25;
     public int curHealth;
@@ -29,6 +30,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        bc = GetComponent<BoxCollider2D>();
         curHealth = maxHealth;
         attackStat = rand.Next(2, 7);
         defenseStat = rand.Next(3, 7);
