@@ -6,7 +6,7 @@ using TMPro;
 public class CombatManager : MonoBehaviour
 {
     [SerializeField] private GameObject enemy;
-    [SerializeField] private GameObject player;
+    public GameObject player;
 
     public GameObject playerTurn;
     public GameObject enemyTurn;
@@ -28,6 +28,11 @@ public class CombatManager : MonoBehaviour
     public bool blocking;
     public int enemyDmgDealt;
 
+    public AudioSource soundSource;
+    public AudioClip next;
+    public AudioClip attack;
+    public AudioClip block;
+
     protected CombatBaseState curState;
     public CombatEnemyState enemyAttack = new CombatEnemyState();
     public CombatPlayerState playerAttack = new CombatPlayerState();
@@ -39,6 +44,7 @@ public class CombatManager : MonoBehaviour
     {
         EnemyHealth.SetActive(false);
         ChangeState(startingState);
+        soundSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

@@ -15,12 +15,16 @@ public class CombatStartState : CombatBaseState
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
+            cm.player.SetActive(false);
+            cm.soundSource.PlayOneShot(cm.next);
             cm.blocking = true;
             cm.ChangeState(cm.playerAttack);
         }
 
         if (Input.GetKeyDown(KeyCode.V))
         {
+            cm.player.SetActive(false);
+            cm.soundSource.PlayOneShot(cm.next);
             cm.ChangeState(cm.playerAttack);
         }
     }

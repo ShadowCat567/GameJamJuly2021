@@ -14,6 +14,7 @@ public class StartconvoState4 : StartConvoBaseState
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
+            scm.soundSource.Play();
             scm.startPanel.SetActive(false);
             scm.player.SetActive(true);
         }

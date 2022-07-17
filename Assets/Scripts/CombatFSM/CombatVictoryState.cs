@@ -16,6 +16,8 @@ public class CombatVictoryState : CombatBaseState
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
+            cm.soundSource.PlayOneShot(cm.next);
+            cm.player.SetActive(true);
             cm.EnemyHealth.SetActive(false);
             cm.combatPanel.SetActive(false);
         }

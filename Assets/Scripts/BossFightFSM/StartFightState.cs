@@ -14,11 +14,13 @@ public class StartFightState : FightBaseState
     {
         if(Input.GetKeyDown(KeyCode.V))
         {
+            bfm.soundSource.PlayOneShot(bfm.next);
             bfm.ChangeState(bfm.playerActionState);
         }
 
         if(Input.GetKeyDown(KeyCode.B))
         {
+            bfm.soundSource.PlayOneShot(bfm.next);
             bfm.playerBlocking = true;
             bfm.ChangeState(bfm.playerActionState);
         }

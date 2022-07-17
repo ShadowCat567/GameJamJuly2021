@@ -49,6 +49,7 @@ public class PActionState : FightBaseState
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
+            bfm.soundSource.PlayOneShot(bfm.next);
             bfm.PAttackImg.SetActive(false);
             bfm.PBlockImg.SetActive(false);
 

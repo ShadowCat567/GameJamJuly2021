@@ -24,10 +24,13 @@ public class EndConvoManager : MonoBehaviour
     public EndConState3 endState3 = new EndConState3();
     public EndConState4 endState4 = new EndConState4();
 
+    public AudioSource soundSource;
+
     // Start is called before the first frame update
     void Start()
     {
         ChangeState(endState1);
+        soundSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

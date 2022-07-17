@@ -5,7 +5,7 @@ using TMPro;
 
 public class BossFightManager : MonoBehaviour
 {
-    [SerializeField] GameObject player;
+    public GameObject player;
     [SerializeField] GameObject boss;
 
     public GameObject fightPanel;
@@ -24,8 +24,10 @@ public class BossFightManager : MonoBehaviour
     public GameObject PAttackImg;
     public GameObject PBlockImg;
 
-    //public GameObject BBlockImg;
-    //public GameObject BAttackImg;
+    public AudioSource soundSource;
+    public AudioClip next;
+    public AudioClip attack;
+    public AudioClip block;
 
     public bool playerBlocking = false;
     public bool enemyBlocking = false;
@@ -41,6 +43,7 @@ public class BossFightManager : MonoBehaviour
     {
         BossHealth.SetActive(false);
         ChangeState(fightStartState);
+        soundSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

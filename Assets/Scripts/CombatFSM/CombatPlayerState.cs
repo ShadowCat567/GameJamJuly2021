@@ -16,6 +16,7 @@ public class CombatPlayerState : CombatBaseState
 
         else
         {
+            cm.soundSource.PlayOneShot(cm.attack);
             cm.PAttkImg.SetActive(true);
             int playerDmgDealt = player.attackStat + player.GenerateAttackValue();
             enemy.TakeDamage(playerDmgDealt);
@@ -27,6 +28,7 @@ public class CombatPlayerState : CombatBaseState
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
+            cm.soundSource.PlayOneShot(cm.next);
             cm.PAttkImg.SetActive(false);
             cm.PBlockImg.SetActive(false);
 

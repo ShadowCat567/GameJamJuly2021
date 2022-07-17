@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour
     public int defenseStat;
 
     [SerializeField] GameObject pausePanel;
+    [SerializeField] TMP_Text statText;
 
     System.Random rand = new System.Random();
 
@@ -32,6 +34,7 @@ public class Player : MonoBehaviour
         defenseStat = rand.Next(3, 7);
         healthSlider.maxValue = maxHealth;
         healthSlider.value = curHealth;
+        statText.text = "Attack: " + attackStat + "\nDefense: " + defenseStat;
     }
 
     // Update is called once per frame

@@ -10,6 +10,7 @@ public class CombatEnemyState : CombatBaseState
 
         if (cm.blocking)
         {
+            cm.soundSource.PlayOneShot(cm.block);
             int damageTaken = (enemy.enemyDamageMod + enemy.GenerateAttackValue()) - player.defenseStat;
             if (damageTaken > 0)
             {
@@ -25,6 +26,7 @@ public class CombatEnemyState : CombatBaseState
 
         else
         {
+            cm.soundSource.PlayOneShot(cm.attack);
             player.TakeDamage(enemy.enemyDamageMod + enemy.GenerateAttackValue());
             cm.enemyTurnTxt.text = enemy.enemyDamageMod + enemy.GenerateAttackValue() + " damage has been dealt to you. \nPress 'V' to attack or 'B' to block";
         }
@@ -34,12 +36,14 @@ public class CombatEnemyState : CombatBaseState
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
+            cm.soundSource.PlayOneShot(cm.next);
             cm.blocking = true;
             cm.ChangeState(cm.playerAttack);
         }
         
         if(Input.GetKeyDown(KeyCode.V))
         {
+            cm.soundSource.PlayOneShot(cm.next);
             cm.blocking = false;
             cm.ChangeState(cm.playerAttack);
         }

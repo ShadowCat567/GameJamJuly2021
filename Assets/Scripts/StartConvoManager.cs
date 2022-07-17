@@ -24,11 +24,14 @@ public class StartConvoManager : MonoBehaviour
     public StartConvoState3 startC3 = new StartConvoState3();
     public StartconvoState4 startC4 = new StartconvoState4();
 
+    public AudioSource soundSource;
+
     // Start is called before the first frame update
     void Start()
     {
         ChangeState(startC1);
         player.SetActive(false);
+        soundSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

@@ -14,6 +14,7 @@ public class StartConvoState2 : StartConvoBaseState
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
+            scm.soundSource.Play();
             scm.ChangeState(scm.startC3);
         }
     }

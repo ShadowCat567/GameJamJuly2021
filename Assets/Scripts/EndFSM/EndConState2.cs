@@ -14,6 +14,7 @@ public class EndConState2 : EndConvoBaseState
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            ecm.soundSource.Play();
             ecm.ChangeState(ecm.endState3);
         }
     }
