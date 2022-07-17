@@ -10,7 +10,7 @@ public class Friend : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EndManager.SetActive(false);
+        
     }
 
     // Update is called once per frame

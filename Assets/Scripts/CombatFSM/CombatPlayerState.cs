@@ -11,7 +11,7 @@ public class CombatPlayerState : CombatBaseState
         if (cm.blocking)
         {
             cm.PBlockImg.SetActive(true);
-            cm.playerTurnTxt.text = "You will block the next incoming attack \nPress SPACE to continue.";
+            cm.playerTurnTxt.text = "You will block the next incoming attack \n  [SPACE]";
         }
 
         else
@@ -19,7 +19,7 @@ public class CombatPlayerState : CombatBaseState
             cm.PAttkImg.SetActive(true);
             int playerDmgDealt = player.attackStat + player.GenerateAttackValue();
             enemy.TakeDamage(playerDmgDealt);
-            cm.playerTurnTxt.text = "You dealt " + playerDmgDealt + " damage! \nPress SPACE to continue.";
+            cm.playerTurnTxt.text = "You dealt " + playerDmgDealt + " damage! \n   [SPACE]";
         }
     }
 

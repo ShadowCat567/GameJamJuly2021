@@ -7,7 +7,7 @@ public class EndConState1 : EndConvoBaseState
     public override void EnterState(EndConvoManager ecm)
     {
         ecm.endConvo1.SetActive(true);
-        ecm.endTxt1.text = "Azalea! \nPress SPACE to continue";
+        ecm.endTxt1.text = "Azalea! \n   [SPACE]";
     }
 
     public override void UpdateState(EndConvoManager ecm)

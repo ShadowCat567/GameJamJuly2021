@@ -14,12 +14,12 @@ public class CombatEnemyState : CombatBaseState
             if (damageTaken > 0)
             {
                 player.TakeDamage(damageTaken);
-                cm.enemyTurnTxt.text = damageTaken + " damage has been dealt to you. \nPress 'V' to attack or 'B' to block";
+                cm.enemyTurnTxt.text = damageTaken + " damage has been dealt to you. \n ['V'] to attack or ['B'] to block";
             }
 
             else if (damageTaken <= 0)
             {
-                cm.enemyTurnTxt.text = "You sucessfully blocked the Weevil's attack! \nPress 'V' to attack or 'B' to block";
+                cm.enemyTurnTxt.text = "You sucessfully blocked the Weevil's attack! \n ['V'] to attack or ['B'] to block";
             }
         }
 

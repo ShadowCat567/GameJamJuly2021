@@ -13,7 +13,7 @@ public class PActionState : FightBaseState
         if(bfm.playerBlocking)
         {
             bfm.PBlockImg.SetActive(true);
-            bfm.playerTxt.text = "You will block the next incoming attack. \nPress SPACE to continue";
+            bfm.playerTxt.text = "You will block the next incoming attack. \n   [SPACE]";
         }
 
         else
@@ -27,12 +27,12 @@ public class PActionState : FightBaseState
                 if (boss.defenseStat < dmgDealt)
                 {
                     boss.TakeDamage(dmgDealt - boss.defenseStat);
-                    bfm.playerTxt.text = "You dealt " + dmgDealt + " damage! \nPress SPACE to continue.";
+                    bfm.playerTxt.text = "You dealt " + dmgDealt + " damage! \n   [SPACE]";
                 }
 
                 else
                 {
-                    bfm.playerTxt.text = "The boss blocked your attack. \nPress SPACE to continue.";
+                    bfm.playerTxt.text = "The boss blocked your attack. \n   [SPACE]";
                 }
             }
 
@@ -40,7 +40,7 @@ public class PActionState : FightBaseState
             {
                 int dmgDealt = player.attackStat + player.GenerateAttackValue();
                 boss.TakeDamage(dmgDealt);
-                bfm.playerTxt.text = "You dealt " + dmgDealt + " damage! \nPress SPACE to continue.";
+                bfm.playerTxt.text = "You dealt " + dmgDealt + " damage! \n   [SPACE]";
             }
         }
     }

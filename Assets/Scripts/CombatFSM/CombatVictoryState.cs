@@ -8,7 +8,7 @@ public class CombatVictoryState : CombatBaseState
     {
         cm.victoryTurn.SetActive(true);
 
-        cm.victoryTxt.text = "You successfully defeated the Weevil! \nPress SPACE to continue";
+        cm.victoryTxt.text = "You successfully defeated the Weevil! \n   [SPACE]";
         player.Heal(7);
     }
 

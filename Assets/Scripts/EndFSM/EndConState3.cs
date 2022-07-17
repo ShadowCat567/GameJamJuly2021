@@ -7,7 +7,7 @@ public class EndConState3 : EndConvoBaseState
     public override void EnterState(EndConvoManager ecm)
     {
         ecm.endConvo3.SetActive(true);
-        ecm.endTxt3.text = "Are you ok? Did the Weevils hurt you? \nPress SPACE to continue";
+        ecm.endTxt3.text = "Are you ok? Did the Weevils hurt you? \n   [SPACE]";
     }
 
     public override void UpdateState(EndConvoManager ecm)

@@ -15,12 +15,12 @@ public class BActionState : FightBaseState
             if(player.defenseStat < damageTaken)
             {
                 player.TakeDamage(damageTaken - player.defenseStat);
-                bfm.bossTxt.text = damageTaken - player.defenseStat + " has been dealt to you. \nPress 'V' to attack or 'B' to block";
+                bfm.bossTxt.text = damageTaken - player.defenseStat + " has been dealt to you. \n ['V'] to attack or ['B'] to block";
             }
 
             else
             {
-                bfm.bossTxt.text = "You successfully blocked the Boss's attack! \nPress 'V' to attack or 'B' to block";
+                bfm.bossTxt.text = "You successfully blocked the Boss's attack! \n ['V'] to attack or ['B'] to block";
             }
         }
 
@@ -30,13 +30,13 @@ public class BActionState : FightBaseState
 
             if (isBlocking == 0)
             {
-                bfm.bossTxt.text = "The Boss blocked. You do not take damage. \nPress 'V' to attack or 'B' to block";
+                bfm.bossTxt.text = "The Boss blocked. You do not take damage. \n ['V'] to attack or ['B'] to block";
             }
 
             else
             {
                 player.TakeDamage(boss.DmgMod + boss.GenerateAttackValue());
-                bfm.bossTxt.text = boss.DmgMod + boss.GenerateAttackValue() + " has been dealt to you. \nPress 'V' to attack or 'B' to block";
+                bfm.bossTxt.text = boss.DmgMod + boss.GenerateAttackValue() + " has been dealt to you. \n ['V'] to attack or ['B'] to block";
             }
         }
     }

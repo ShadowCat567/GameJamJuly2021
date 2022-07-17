@@ -7,7 +7,7 @@ public class StartconvoState4 : StartConvoBaseState
     public override void EnterState(StartConvoManager scm)
     {
         scm.startConvo4.SetActive(true);
-        scm.startCTxt4.text = "Oh no! I have to get them back! \nPress SPACE to continue";
+        scm.startCTxt4.text = "Oh no! I have to get them back! \n   [SPACE]";
     }
 
     public override void UpdateState(StartConvoManager scm)

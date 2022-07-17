@@ -9,7 +9,7 @@ public class StartConvoState1 : StartConvoBaseState
         scm.startPanel.SetActive(true);
         scm.startConvo1.SetActive(true);
 
-        scm.startCTxt1.text = "Where's Azalea! \nI could have sworn they were right here a minute ago! \nPress SPACE to continue";
+        scm.startCTxt1.text = "Where's Azalea! \nI could have sworn they were right here a minute ago! \n   [SPACE]";
     }
 
     public override void UpdateState(StartConvoManager scm)

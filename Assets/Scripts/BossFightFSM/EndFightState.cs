@@ -7,7 +7,7 @@ public class EndFightState : FightBaseState
     public override void EnterState(FinalBoss boss, Player player, BossFightManager bfm)
     {
         bfm.victoryAction.SetActive(true);
-        bfm.victoryTxt.text = "You have defeated the Final Boss! \nPress SPACE to continue";
+        bfm.victoryTxt.text = "You have defeated the Final Boss! \n   [SPACE]";
         player.Heal(13);
     }
 

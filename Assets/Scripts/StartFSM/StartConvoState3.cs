@@ -7,7 +7,7 @@ public class StartConvoState3 : StartConvoBaseState
     public override void EnterState(StartConvoManager scm)
     {
         scm.startConvo3.SetActive(true);
-        scm.startCTxt3.text = "[the Weevil disappears into the grass] \nPress SPACE to continue";
+        scm.startCTxt3.text = "[the Weevil disappears into the grass] \n \n   [SPACE]";
     }
 
     public override void UpdateState(StartConvoManager scm)

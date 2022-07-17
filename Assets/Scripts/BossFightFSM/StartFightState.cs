@@ -7,7 +7,7 @@ public class StartFightState : FightBaseState
     public override void EnterState(FinalBoss boss, Player player, BossFightManager bfm)
     {
         bfm.startAction.SetActive(true);
-        bfm.startTxt.text = "You are not strong enough to defeat me, Ladybug! \nPress 'V' to Attack or 'B' to Block";
+        bfm.startTxt.text = "You are not strong enough to defeat me, Ladybug! \n ['V'] to Attack or ['B'] to Block";
     }
 
     public override void UpdateState(FinalBoss boss, Player player, BossFightManager bfm)
