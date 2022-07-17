@@ -12,7 +12,7 @@ public class ButtonBehaviors : MonoBehaviour
 
     public void ExitGame()
     {
-        Application.Quit();
+        SceneManager.LoadScene(4);
     }
 
     public void UnpauseGame(GameObject pausePanel)
