@@ -3358,6 +3358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 930033697}
   Boss: {fileID: 594409207}
+  friend: {fileID: 1140485636}
   HealthBar: {fileID: 1541734421}
   BossManager: {fileID: 1824984441}
   DmgMod: 0

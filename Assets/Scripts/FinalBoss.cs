@@ -8,6 +8,7 @@ public class FinalBoss : MonoBehaviour
 {
     [SerializeField] GameObject player;
     [SerializeField] GameObject Boss;
+    public GameObject friend;
     [SerializeField] Slider HealthBar;
     [SerializeField] GameObject BossManager;
 
@@ -26,6 +27,7 @@ public class FinalBoss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        friend.SetActive(false);
         curHealth = maxHealth;
         DmgMod = rand.Next(2, 5);
         defenseStat = rand.Next(3, 6);
@@ -39,6 +41,7 @@ public class FinalBoss : MonoBehaviour
     {
         if(curHealth <= 0)
         {
+            friend.SetActive(true);
             Boss.SetActive(false);
         }
 
