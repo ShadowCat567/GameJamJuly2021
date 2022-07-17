@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class FinalBoss : MonoBehaviour
 {
+    [SerializeField] GameObject player;
     [SerializeField] GameObject Boss;
     [SerializeField] Slider HealthBar;
     [SerializeField] GameObject BossManager;
@@ -13,6 +14,9 @@ public class FinalBoss : MonoBehaviour
     public int DmgMod;
     public int defenseStat;
     public string charName = "Boss";
+
+    float distToPlayer = 15.0f;
+    float velocity = 2.5f;
 
     public int curHealth;
     int maxHealth = 25;
@@ -36,6 +40,11 @@ public class FinalBoss : MonoBehaviour
         if(curHealth <= 0)
         {
             Boss.SetActive(false);
+        }
+
+        if (Vector3.Distance(transform.position, player.transform.position) <= distToPlayer)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, velocity * Time.deltaTime);
         }
     }
 

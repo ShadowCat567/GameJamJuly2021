@@ -323,6 +323,10 @@ PrefabInstance:
       value: 0.21055222
       objectReference: {fileID: 0}
     - target: {fileID: 8562142822440638526, guid: a7c375394641c264ea1791ed510f766a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 930033697}
+    - target: {fileID: 8562142822440638526, guid: a7c375394641c264ea1791ed510f766a, type: 3}
       propertyPath: HealthBar
       value: 
       objectReference: {fileID: 1491935170}
@@ -3327,7 +3331,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.29895473, y: 0.9141226}
+  m_Offset: {x: -0.25470448, y: 0.9141226}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3338,7 +3342,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 13.786764, y: 8.171757}
+  m_Size: {x: 8.742258, y: 8.171757}
   m_EdgeRadius: 0
 --- !u!114 &594409209
 MonoBehaviour:
@@ -3352,6 +3356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10cec4bfb636b6c499255d6d1d9f1025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 930033697}
   Boss: {fileID: 594409207}
   HealthBar: {fileID: 1541734421}
   BossManager: {fileID: 1824984441}
@@ -9467,6 +9472,26 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 8562142822440638525, guid: a7c375394641c264ea1791ed510f766a, type: 3}
+      propertyPath: m_Size.x
+      value: 4.3269644
+      objectReference: {fileID: 0}
+    - target: {fileID: 8562142822440638525, guid: a7c375394641c264ea1791ed510f766a, type: 3}
+      propertyPath: m_Size.y
+      value: 4.2084274
+      objectReference: {fileID: 0}
+    - target: {fileID: 8562142822440638525, guid: a7c375394641c264ea1791ed510f766a, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.093812466
+      objectReference: {fileID: 0}
+    - target: {fileID: 8562142822440638525, guid: a7c375394641c264ea1791ed510f766a, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.3957863
+      objectReference: {fileID: 0}
+    - target: {fileID: 8562142822440638526, guid: a7c375394641c264ea1791ed510f766a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 930033697}
     - target: {fileID: 8562142822440638526, guid: a7c375394641c264ea1791ed510f766a, type: 3}
       propertyPath: HealthBar
       value: 
@@ -11092,6 +11117,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8562142822440638525, guid: a7c375394641c264ea1791ed510f766a, type: 3}
+      propertyPath: m_Size.x
+      value: 4.0223594
+      objectReference: {fileID: 0}
+    - target: {fileID: 8562142822440638525, guid: a7c375394641c264ea1791ed510f766a, type: 3}
+      propertyPath: m_Size.y
+      value: 4.3089733
+      objectReference: {fileID: 0}
+    - target: {fileID: 8562142822440638525, guid: a7c375394641c264ea1791ed510f766a, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.12010926
+      objectReference: {fileID: 0}
+    - target: {fileID: 8562142822440638525, guid: a7c375394641c264ea1791ed510f766a, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.34551334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8562142822440638526, guid: a7c375394641c264ea1791ed510f766a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 930033697}
     - target: {fileID: 8562142822440638526, guid: a7c375394641c264ea1791ed510f766a, type: 3}
       propertyPath: HealthBar
       value: 

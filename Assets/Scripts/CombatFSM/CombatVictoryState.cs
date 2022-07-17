@@ -9,6 +9,7 @@ public class CombatVictoryState : CombatBaseState
         cm.victoryTurn.SetActive(true);
 
         cm.victoryTxt.text = "You successfully defeated the Weevil! \nPress SPACE to continue";
+        player.Heal(9);
     }
 
     public override void UpdateState(EnemyBehavior enemy, Player player, CombatManager cm)

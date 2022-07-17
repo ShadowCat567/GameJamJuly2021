@@ -74,4 +74,19 @@ public class Player : MonoBehaviour
     {
         curHealth -= damageTaken;
     }
+
+    public void Heal(int healVal)
+    {
+        int newHealth = curHealth + healVal;
+        if (newHealth < maxHealth)
+        {
+            curHealth += healVal;
+        }
+
+        else
+        {
+            int overHeal = newHealth - maxHealth;
+            curHealth += (healVal - overHeal);
+        }
+    }
 }

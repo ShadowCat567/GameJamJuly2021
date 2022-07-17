@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class EnemyBehavior : MonoBehaviour
 {
+    [SerializeField] GameObject player;
     [SerializeField] GameObject CombatManage;
     [SerializeField] GameObject Enemy;
     [SerializeField] Slider HealthBar;
@@ -14,6 +15,9 @@ public class EnemyBehavior : MonoBehaviour
 
     int maxEnemyHealth = 13;
     public int curEnemyHealth;
+
+    float distToPlayer = 12.0f;
+    float velocity = 3.5f;
 
     bool listRefilled = false;
 
@@ -42,6 +46,11 @@ public class EnemyBehavior : MonoBehaviour
         if(curEnemyHealth <= 0)
         {
             Enemy.SetActive(false);
+        }
+
+        if(Vector3.Distance(transform.position, player.transform.position) <= distToPlayer)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, velocity * Time.deltaTime);
         }
     }
 
