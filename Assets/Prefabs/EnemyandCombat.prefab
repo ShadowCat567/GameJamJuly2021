@@ -54,6 +54,8 @@ MonoBehaviour:
   enemyTurnTxt: {fileID: 0}
   victoryTxt: {fileID: 0}
   startingTxt: {fileID: 0}
+  PAttkImg: {fileID: 0}
+  PBlockImg: {fileID: 0}
   combatPanel: {fileID: 4692511946473582987, guid: 6d0888a7e33239940acec22b38e501a8, type: 3}
   EnemyHealth: {fileID: 8997491351046302347, guid: e292767456603324e95ee247cc7e4805, type: 3}
   blocking: 0
@@ -103,6 +105,7 @@ GameObject:
   - component: {fileID: 8562142822440638527}
   - component: {fileID: 8562142822440638526}
   - component: {fileID: 8562142822440638525}
+  - component: {fileID: 1257402273775705202}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -189,6 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e1c7573162c564788bb27b3ae3fe8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   CombatManage: {fileID: 8562142820818136997}
   Enemy: {fileID: 8562142822440638513}
   HealthBar: {fileID: 8997491351046302346, guid: e292767456603324e95ee247cc7e4805, type: 3}
@@ -220,3 +224,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.537755, y: 5}
   m_EdgeRadius: 0
+--- !u!95 &1257402273775705202
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8562142822440638513}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b0a5e760cc620894e95993a0b9c8e796, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
