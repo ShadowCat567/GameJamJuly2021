@@ -13,7 +13,7 @@ public class EnemyBehavior : MonoBehaviour
 
     public int enemyDamageMod;
 
-    int maxEnemyHealth = 13;
+    int maxEnemyHealth = 20;
     public int curEnemyHealth;
 
     float distToPlayer = 12.0f;

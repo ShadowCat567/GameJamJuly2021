@@ -20,7 +20,7 @@ public class FinalBoss : MonoBehaviour
     float velocity = 2.5f;
 
     public int curHealth;
-    int maxHealth = 25;
+    int maxHealth = 38;
 
     System.Random rand = new System.Random();
 
@@ -39,7 +39,9 @@ public class FinalBoss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(curHealth <= 0)
+        HealthBar.value = curHealth;
+
+        if (curHealth <= 0)
         {
             friend.SetActive(true);
             Boss.SetActive(false);
