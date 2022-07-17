@@ -12,7 +12,7 @@ public class EnemyBehavior : MonoBehaviour
 
     public int enemyDamageMod;
 
-    int maxEnemyHealth = 20;
+    int maxEnemyHealth = 13;
     public int curEnemyHealth;
 
     bool listRefilled = false;
@@ -26,7 +26,7 @@ public class EnemyBehavior : MonoBehaviour
     void Start()
     {
         curEnemyHealth = maxEnemyHealth;
-        enemyDamageMod = rand.Next(1, 3);
+        enemyDamageMod = rand.Next(1, 4);
         listRefilled = true;
         RefillLst();
         HealthBar.maxValue = maxEnemyHealth;

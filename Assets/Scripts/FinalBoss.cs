@@ -15,7 +15,7 @@ public class FinalBoss : MonoBehaviour
     public string charName = "Boss";
 
     public int curHealth;
-    int maxHealth = 40;
+    int maxHealth = 25;
 
     System.Random rand = new System.Random();
 
@@ -23,8 +23,8 @@ public class FinalBoss : MonoBehaviour
     void Start()
     {
         curHealth = maxHealth;
-        DmgMod = rand.Next(2, 4);
-        defenseStat = rand.Next(2, 5);
+        DmgMod = rand.Next(2, 5);
+        defenseStat = rand.Next(3, 6);
         HealthBar.maxValue = maxHealth;
         HealthBar.value = curHealth;
         BossManager.SetActive(false);

@@ -8,7 +8,7 @@ public class CombatStartState : CombatBaseState
     {
         cm.startingTurn.SetActive(true);
 
-        cm.startingTxt.text = "Press 'B' to block or 'V' to attack";
+        cm.startingTxt.text = "Try me! You won't make it to your friend! \nPress 'V' to attack or 'B' to block";
     }
 
     public override void UpdateState(EnemyBehavior enemy, Player player, CombatManager cm)

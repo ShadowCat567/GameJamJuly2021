@@ -21,6 +21,12 @@ public class BossFightManager : MonoBehaviour
     public TMP_Text bossTxt;
     public TMP_Text victoryTxt;
 
+    public GameObject PAttackImg;
+    public GameObject PBlockImg;
+
+    //public GameObject BBlockImg;
+    //public GameObject BAttackImg;
+
     public bool playerBlocking = false;
     public bool enemyBlocking = false;
 

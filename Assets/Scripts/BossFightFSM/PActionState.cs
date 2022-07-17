@@ -12,11 +12,14 @@ public class PActionState : FightBaseState
 
         if(bfm.playerBlocking)
         {
+            bfm.PBlockImg.SetActive(true);
             bfm.playerTxt.text = "You will block the next incoming attack. \nPress SPACE to continue";
         }
 
         else
         {
+            bfm.PAttackImg.SetActive(true);
+
             if(blockVal == 0)
             {
                 int dmgDealt = player.attackStat + player.GenerateAttackValue();
@@ -46,6 +49,9 @@ public class PActionState : FightBaseState
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
+            bfm.PAttackImg.SetActive(false);
+            bfm.PBlockImg.SetActive(false);
+
             if(boss.curHealth <= 0)
             {
                 bfm.ChangeState(bfm.endState);

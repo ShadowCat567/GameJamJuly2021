@@ -28,16 +28,10 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         curHealth = maxHealth;
-        attackStat = rand.Next(2, 5);
-        defenseStat = rand.Next(3, 6);
+        attackStat = rand.Next(2, 7);
+        defenseStat = rand.Next(3, 7);
         healthSlider.maxValue = maxHealth;
         healthSlider.value = curHealth;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame

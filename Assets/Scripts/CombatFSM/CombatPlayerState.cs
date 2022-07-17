@@ -10,11 +10,13 @@ public class CombatPlayerState : CombatBaseState
 
         if (cm.blocking)
         {
+            cm.PBlockImg.SetActive(true);
             cm.playerTurnTxt.text = "You will block the next incoming attack \nPress SPACE to continue.";
         }
 
         else
         {
+            cm.PAttkImg.SetActive(true);
             int playerDmgDealt = player.attackStat + player.GenerateAttackValue();
             enemy.TakeDamage(playerDmgDealt);
             cm.playerTurnTxt.text = "You dealt " + playerDmgDealt + " damage! \nPress SPACE to continue.";
@@ -25,6 +27,9 @@ public class CombatPlayerState : CombatBaseState
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
+            cm.PAttkImg.SetActive(false);
+            cm.PBlockImg.SetActive(false);
+
             if (enemy.curEnemyHealth <= 0)
             {
                 cm.ChangeState(cm.victoryState);

@@ -14,27 +14,24 @@ public class CombatEnemyState : CombatBaseState
             if (damageTaken > 0)
             {
                 player.TakeDamage(damageTaken);
-                cm.enemyTurnTxt.text = damageTaken + " damage has been dealt to you. \nPress 'B' to block or 'V' to attack";
+                cm.enemyTurnTxt.text = damageTaken + " damage has been dealt to you. \nPress 'V' to attack or 'B' to block";
             }
 
             else if (damageTaken <= 0)
             {
-                cm.enemyTurnTxt.text = "You sucessfully blocked the Weevil's attack! \nPress 'B' to block or 'V' to attack";
+                cm.enemyTurnTxt.text = "You sucessfully blocked the Weevil's attack! \nPress 'V' to attack or 'B' to block";
             }
         }
 
         else
         {
             player.TakeDamage(enemy.enemyDamageMod + enemy.GenerateAttackValue());
-            cm.enemyTurnTxt.text = enemy.enemyDamageMod + enemy.GenerateAttackValue() + " damage has been dealt to you. \nPress 'B' to block or 'V' to attack";
+            cm.enemyTurnTxt.text = enemy.enemyDamageMod + enemy.GenerateAttackValue() + " damage has been dealt to you. \nPress 'V' to attack or 'B' to block";
         }
     }
 
     public override void UpdateState(EnemyBehavior enemy, Player player, CombatManager cm)
     {
-        //string displayTxt;
-        //int dmg = enemy.enemyDamageMod + enemy.GenerateAttackValue();
-
         if (Input.GetKeyDown(KeyCode.B))
         {
             cm.blocking = true;

@@ -18,6 +18,9 @@ public class CombatManager : MonoBehaviour
     public TMP_Text victoryTxt;
     public TMP_Text startingTxt;
 
+    public GameObject PAttkImg;
+    public GameObject PBlockImg;
+
     public GameObject combatPanel;
 
     public GameObject EnemyHealth;
