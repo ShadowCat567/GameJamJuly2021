@@ -15,7 +15,6 @@ public class EnemyBehavior : MonoBehaviour
     int maxEnemyHealth = 20;
     public int curEnemyHealth;
 
-    public bool dmgTaken = false;
     bool listRefilled = false;
 
     List<int> attkValLst = new List<int>();
@@ -32,6 +31,7 @@ public class EnemyBehavior : MonoBehaviour
         RefillLst();
         HealthBar.maxValue = maxEnemyHealth;
         HealthBar.value = curEnemyHealth;
+        CombatManage.SetActive(false);
     }
 
     // Update is called once per frame
@@ -82,6 +82,7 @@ public class EnemyBehavior : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
+            CombatManage.SetActive(true);
             CombatManage.GetComponent<CombatManager>().combatPanel.SetActive(true);
         }
     }

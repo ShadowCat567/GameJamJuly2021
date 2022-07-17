@@ -54,8 +54,8 @@ MonoBehaviour:
   enemyTurnTxt: {fileID: 0}
   victoryTxt: {fileID: 0}
   startingTxt: {fileID: 0}
-  combatPanel: {fileID: 0}
-  EnemyHealth: {fileID: 0}
+  combatPanel: {fileID: 4692511946473582987, guid: 6d0888a7e33239940acec22b38e501a8, type: 3}
+  EnemyHealth: {fileID: 8997491351046302347, guid: e292767456603324e95ee247cc7e4805, type: 3}
   blocking: 0
   enemyDmgDealt: 0
 --- !u!1 &8562142821647670209
@@ -191,10 +191,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CombatManage: {fileID: 8562142820818136997}
   Enemy: {fileID: 8562142822440638513}
-  HealthBar: {fileID: 0}
+  HealthBar: {fileID: 8997491351046302346, guid: e292767456603324e95ee247cc7e4805, type: 3}
   enemyDamageMod: 0
   curEnemyHealth: 0
-  dmgTaken: 0
 --- !u!61 &8562142822440638525
 BoxCollider2D:
   m_ObjectHideFlags: 0
