@@ -50,6 +50,12 @@ public class FinalBoss : MonoBehaviour
         return attkVal;
     }
 
+    public int Blocking()
+    {
+        int blockingVal = rand.Next(0, 2);
+        return blockingVal;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Player")

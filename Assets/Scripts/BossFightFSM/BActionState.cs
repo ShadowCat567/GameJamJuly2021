@@ -2,17 +2,62 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BActionState : MonoBehaviour
+public class BActionState : FightBaseState
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void EnterState(FinalBoss boss, Player player, BossFightManager bfm)
     {
-        
+        bfm.bossAction.SetActive(true);
+
+        if(bfm.playerBlocking)
+        {
+            int damageTaken = boss.DmgMod + boss.GenerateAttackValue();
+
+            if(player.defenseStat < damageTaken)
+            {
+                player.TakeDamage(damageTaken - player.defenseStat);
+                bfm.bossTxt.text = damageTaken - player.defenseStat + " has been dealt to you. \nPress 'B' to block or 'V' to attack";
+            }
+
+            else
+            {
+                bfm.bossTxt.text = "You successfully blocked the Boss's attack! \nPress 'B' to block or 'V' to attack";
+            }
+        }
+
+        else
+        {
+            int isBlocking = boss.Blocking();
+
+            if (isBlocking == 0)
+            {
+                bfm.bossTxt.text = "The Boss blocked. You do not take damage. \nPress 'B' to block or 'V' to attack";
+            }
+
+            else
+            {
+                player.TakeDamage(boss.DmgMod + boss.GenerateAttackValue());
+                bfm.bossTxt.text = boss.DmgMod + boss.GenerateAttackValue() + " has been dealt to you. \nPress 'B' to block or 'V' to attack";
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void UpdateState(FinalBoss boss, Player player, BossFightManager bfm)
     {
-        
+        if(Input.GetKeyDown(KeyCode.V))
+        {
+            bfm.playerBlocking = false;
+            bfm.ChangeState(bfm.playerActionState);
+        }
+
+        if(Input.GetKeyDown(KeyCode.B))
+        {
+            bfm.playerBlocking = true;
+            bfm.ChangeState(bfm.playerActionState);
+        }
+    }
+
+    public override void ExitState(FinalBoss boss, Player player, BossFightManager bfm)
+    {
+        bfm.bossAction.SetActive(false);
     }
 }

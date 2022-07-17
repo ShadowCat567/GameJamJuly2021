@@ -21,19 +21,40 @@ public class BossFightManager : MonoBehaviour
     public TMP_Text bossTxt;
     public TMP_Text victoryTxt;
 
-    public bool playerBlocking;
-    public bool enemyBlocking;
+    public bool playerBlocking = false;
+    public bool enemyBlocking = false;
 
+    protected FightBaseState curState;
+    public StartFightState fightStartState = new StartFightState();
+    public PActionState playerActionState = new PActionState();
+    public BActionState bossActionState = new BActionState();
+    public EndFightState endState = new EndFightState();
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        BossHealth.SetActive(false);
+        ChangeState(fightStartState);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        curState.UpdateState(boss.GetComponent<FinalBoss>(), player.GetComponent<Player>(), this);
+    }
+
+    public void ChangeState(FightBaseState newState)
+    {
+        if(curState != null)
+        {
+            curState.ExitState(boss.GetComponent<FinalBoss>(), player.GetComponent<Player>(), this);
+        }
+
+        curState = newState;
+
+        if(curState != null)
+        {
+            curState.EnterState(boss.GetComponent<FinalBoss>(), player.GetComponent<Player>(), this);
+        }
     }
 }
