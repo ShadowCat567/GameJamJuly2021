@@ -91,6 +91,7 @@ public class EnemyBehavior : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
+            player.GetComponent<BoxCollider2D>().enabled = false;
             CombatManage.SetActive(true);
             CombatManage.GetComponent<CombatManager>().combatPanel.SetActive(true);
         }

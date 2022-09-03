@@ -74,6 +74,7 @@ public class FinalBoss : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
+            player.GetComponent<BoxCollider2D>().enabled = false;
             BossManager.SetActive(true);
             BossManager.GetComponent<BossFightManager>().fightPanel.SetActive(true);
         }
